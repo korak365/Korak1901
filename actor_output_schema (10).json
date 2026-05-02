@@ -1,0 +1,16 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema of the AI-Ready Documentation Crawler",
+    "properties": {
+        "overview": {
+            "type": "string",
+            "title": "Documentation Markdown Files",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+        },
+        "markdownFiles": {
+            "type": "string",
+            "title": "Markdown Files",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records?key=OUTPUT"
+        }
+    }
+}

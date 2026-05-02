@@ -1,0 +1,29 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Documentation Pages",
+            "transformation": {
+                "fields": ["title", "url", "markdown"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "title": {
+                        "label": "Title",
+                        "format": "text"
+                    },
+                    "url": {
+                        "label": "Source URL",
+                        "format": "link"
+                    },
+                    "markdown": {
+                        "label": "Markdown Content",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}

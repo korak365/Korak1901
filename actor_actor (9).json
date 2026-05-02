@@ -1,0 +1,17 @@
+{
+    "actorSpecification": 1,
+    "name": "ai-ready-documentation-crawler",
+    "title": "AI-Ready Documentation Crawler",
+    "description": "Scrapes developer docs and outputs perfectly formatted Markdown for LLM fine-tuning.",
+    "version": "0.0",
+    "meta": {
+        "templateId": "ai-generated-actor",
+        "generatedBy": "Claude (Anthropic)"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "dockerfile": "../Dockerfile"
+}
