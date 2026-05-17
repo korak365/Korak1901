@@ -1,0 +1,77 @@
+{
+    "actorKeyValueStoreSchemaVersion": 1,
+    "title": "Key-Value Store Schema for AI-Ready Documentation Crawler",
+    "description": "The schema defines how the Actor stores its outputs in the Key-Value Store.",
+    "collections": {
+        "crawlStatistics": {
+            "title": "Crawl Statistics",
+            "description": "Aggregated data about page counts, sizes, and crawl performance.",
+            "key": "CRAWL_STATS",
+            "contentTypes": ["application/json"],
+            "jsonSchema": {
+                "type": "object",
+                "title": "Crawl Statistics",
+                "description": "Summary of data collected and processed during the crawl.",
+                "properties": {
+                    "totalPagesCrawled": {
+                        "type": "integer",
+                        "description": "The total number of pages successfully crawled.",
+                        "example": 250
+                    },
+                    "failedRequests": {
+                        "type": "integer",
+                        "description": "The number of failed requests during the crawl.",
+                        "example": 5
+                    },
+                    "scrapingDuration": {
+                        "type": "integer",
+                        "description": "How long the Actor spent scraping data (in seconds).",
+                        "example": 3600
+                    },
+                    "averageContentSize": {
+                        "type": "integer",
+                        "description": "The average size of the scraped content (in bytes).",
+                        "example": 10240
+                    }
+                }
+            }
+        },
+        "documentationExport": {
+            "title": "Documentation Export",
+            "description": "A downloadable export of all the crawled documentation pages.",
+            "key": "MARKDOWN_EXPORT",
+            "contentTypes": ["application/json", "application/jsonl"],
+            "jsonSchema": {
+                "type": "array",
+                "title": "Documentation Export",
+                "description": "Export of documentation content, optimized for fine-tuning LLMs.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "title": {
+                            "type": "string",
+                            "description": "Title of the page.",
+                            "example": "API Reference - v1"
+                        },
+                        "url": {
+                            "type": "string",
+                            "description": "URL where the page was scraped from.",
+                            "example": "https://example.com/docs/v1/api-reference"
+                        },
+                        "markdown": {
+                            "type": "string",
+                            "description": "Markdown content of the page.",
+                            "example": "# API Reference - v1\\n\\n## Overview\\nThis is the API reference for version 1."
+                        },
+                        "scrapedAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "When the page was scraped.",
+                            "example": "2026-05-17T12:45:00Z"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
